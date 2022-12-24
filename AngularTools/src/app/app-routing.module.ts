@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {path: '', pathMatch: 'full', redirectTo: 'TenMDSocialPostCreator'},
-  {path: 'TenMDSocialPostCreator', loadChildren: () => import('./Modules/TenMDSocialPostCreator/ten-mdsocial-post-creator.module').then(m => m.TenMDSocialPostCreatorModule)},
+  {path: '', pathMatch: 'full', loadChildren: () => import('./Modules/Home/home.module').then(m => m.HomeModule)},
+  {path: 'RandomPasswordGenerator', loadChildren: () => import('./Modules/RandomPasswordGenerator/random-password-generator.module').then(m => m.RandomPasswordGeneratorModule)},
 ];
 
 @NgModule({

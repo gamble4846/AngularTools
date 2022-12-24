@@ -1,0 +1,70 @@
+<div class="rpgopenerContainer">
+    <div class="rpgopenerInnerContainer">
+        <div class="headerContainer">
+            <h1>Instantly generate a secure, random password with Angular Tools</h1>
+            <p>
+                Password strength is a measure of the effectiveness of a password against guessing or brute-force attacks. In its usual form, it estimates how many trials an attacker who does not have direct access to the password would need, on average, to guess it correctly. The strength of a password is a function of length, complexity, and unpredictability.
+            </p>
+        </div>
+        <div class="passwordFieldContainer">
+            <nz-input-group [nzSuffix]="suffixIconSearch">
+                <input type="text" nz-input placeholder="Password" class="passwordFieldTextBox" [(ngModel)]="passwordFieldTextBox"/>
+            </nz-input-group>
+            <ng-template #suffixIconSearch>
+                <div class="passwordFieldSuffixContainer">
+                    <div class="passwordFieldSuffixBTN" (click)="copyPassword()">
+                        <span nz-icon nzType="copy" nzTheme="outline"></span>
+                    </div>
+                    <div class="passwordFieldSuffixBTN" (click)="generateNewPassword()">
+                        <span nz-icon nzType="redo" nzTheme="outline"></span>
+                    </div>
+                </div>
+            </ng-template>
+        </div>
+        <div class="customizationContainer">
+            <div class="header">
+                Customize your password
+                <hr>
+            </div>
+            <div class="body">
+                <div nz-row>
+                    <div nz-col nzXs="24" nzSm="24" nzMd="24" nzLg="12" nzXl="12" class="column">
+                        <div style="font-size: 20px;">Password Length</div>
+                        <div class="passwordLengthInputsContainer">
+                            <div class="textboxContainer">
+                                <nz-input-number
+                                  [nzMin]="1"
+                                  [(ngModel)]="passwordLength"
+                                  class="inputTextbox"
+                                  (ngModelChange)="generateNewPassword()"
+                                ></nz-input-number>
+                            </div>
+                            <div class="sliderContainer">
+                                <nz-slider [nzMin]="1" [nzMax]="100" [(ngModel)]="passwordLength" (ngModelChange)="generateNewPassword()"></nz-slider>
+                            </div>
+                        </div>
+                    </div>
+                    <div nz-col nzXs="24" nzSm="12" nzMd="12" nzLg="6" nzXl="6" class="column">
+                        <nz-radio-group [(ngModel)]="radioCustomization" (ngModelChange)="radioCustomizationChanged()">
+                            <label nz-radio nzValue="1">Easy to say <span nz-icon nzType="info-circle" nzTheme="fill" nz-tooltip nzTooltipTitle="Avoid numbers and special characters"></span></label><br>
+                            <label nz-radio nzValue="2">Easy to read <span nz-icon nzType="info-circle" nzTheme="fill" nz-tooltip nzTooltipTitle="Avoid ambiguous characters like l, 1, O, and 0"></span></label><br>
+                            <label nz-radio nzValue="3">All characters <span nz-icon nzType="info-circle" nzTheme="fill" nz-tooltip nzTooltipTitle="Any character combinations like !, 7, h, K, and l1"></span></label><br>
+                        </nz-radio-group>
+                    </div>
+                    <div nz-col nzXs="24" nzSm="12" nzMd="12" nzLg="6" nzXl="6" class="column">
+                        <div>
+                            <label nz-checkbox [(ngModel)]="UppercaseCheck" (ngModelChange)="generateNewPassword()">Uppercase</label><br>
+                            <label nz-checkbox [(ngModel)]="LowercaseCheck" (ngModelChange)="generateNewPassword()">Lowercase</label><br>
+                            <label nz-checkbox [(ngModel)]="FirstAndLastCheck" (ngModelChange)="generateNewPassword()">First And Last - Alphabets</label><br>
+                            <label nz-checkbox [(ngModel)]="NumbersCheck" [disabled]="radioCustomization == '1'" (ngModelChange)="generateNewPassword()">Numbers</label><br>
+                            <label nz-checkbox [(ngModel)]="SymbolsCheck" [disabled]="radioCustomization == '1'" (ngModelChange)="generateNewPassword()">Symbols</label><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="CopyButtonContainer">
+            <button nz-button nzType="primary" (click)="copyPassword()">Copy Password</button>
+        </div>
+    </div>
+</div>

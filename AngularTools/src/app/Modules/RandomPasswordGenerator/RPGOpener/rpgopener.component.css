@@ -1,0 +1,98 @@
+.rpgopenerContainer{
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    background-color: #caedf7;
+}
+
+.rpgopenerInnerContainer{
+    max-width: 900px;
+}
+
+.rpgopenerContainer .passwordFieldSuffixContainer{
+    display: flex;
+}
+
+.rpgopenerContainer .passwordFieldSuffixContainer .passwordFieldSuffixBTN{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.rpgopenerContainer .passwordFieldSuffixContainer .passwordFieldSuffixBTN:hover{
+    color: #1890ff;
+}
+
+.passwordFieldTextBox{
+    font-size: 20px;
+}
+
+.rpgopenerContainer .headerContainer{
+    text-align: center;
+}
+
+.rpgopenerContainer .headerContainer p{
+    font-size: 16px;
+}
+
+.customizationContainer{
+    background-color: white;
+    border: 1px solid rgb(240, 240, 240);
+    border-radius: 5px;
+    margin-top: 10px;
+    padding: 20px;
+}
+
+.customizationContainer .header{
+    font-weight: 900;
+    font-size: 25px;
+    text-align: center;
+}
+
+.customizationContainer .header hr{
+    margin: 5px;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+.passwordLengthInputsContainer{
+    display: flex;
+}
+
+.passwordLengthInputsContainer .textboxContainer{
+    width: 30%;
+    max-width: 90px;
+    padding: 5px;
+}
+
+.passwordLengthInputsContainer .textboxContainer .inputTextbox{
+    max-width: 100%;
+}
+
+.passwordLengthInputsContainer .sliderContainer{
+    padding: 5px;
+    width: calc(100% - 90px);
+}
+
+.customizationContainer .body .column{
+    padding: 5px;
+    align-items: center;
+}
+
+.customizationContainer .body .column label{
+    font-size: 20px;
+}
+
+.CopyButtonContainer{
+    margin-top: 10px;
+}
+
+.CopyButtonContainer button{
+    width: 100%;
+    font-size: 20px;
+    height: max-content;
+}

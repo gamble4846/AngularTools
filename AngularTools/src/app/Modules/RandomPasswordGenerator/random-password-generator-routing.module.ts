@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './Home/home.component';
+import { RPGOpenerComponent } from './RPGOpener/rpgopener.component';
 
 const routes: Routes = [
-  {path: '', pathMatch: 'full', redirectTo: 'Home'},
-  {path: 'Home', component: HomeComponent},
+  { path: '', pathMatch: 'full',  component:RPGOpenerComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class TenMDSocialPostCreatorRoutingModule { }
+export class RandomPasswordGeneratorRoutingModule { }
