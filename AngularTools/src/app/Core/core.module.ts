@@ -3,21 +3,28 @@ import { CommonModule } from '@angular/common';
 
 import { CoreRoutingModule } from './core-routing.module';
 import { LoaderComponent } from './Components/Loader/loader.component';
+import { FooterComponent } from './Components/Footer/footer.component';
 
-import { NzMessageModule } from 'ng-zorro-antd/message';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzCollapseModule } from 'ng-zorro-antd/collapse';
+import { NzIconModule } from 'ng-zorro-antd/icon';
 
 
 @NgModule({
   declarations: [
-    LoaderComponent
+    LoaderComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,
-    CoreRoutingModule
+    CoreRoutingModule,
+    NzGridModule,
+    NzCollapseModule,
+    NzIconModule
   ],
   exports:[
     LoaderComponent,
-    NzMessageModule
+    FooterComponent
   ]
 })
 export class CoreModule { }

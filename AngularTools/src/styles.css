@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+
+.footerDataContainer .ant-collapse > .ant-collapse-item > .ant-collapse-header {
+    padding: 0px !important;
+}
+
+.footerDataContainer .ant-collapse > .ant-collapse-item.ant-collapse-no-arrow > .ant-collapse-header {
+    padding: 0px !important;
+}
+
+.footerDataContainer .ant-collapse-content > .ant-collapse-content-box {
+    padding: 0px !important;
+}
+
+.footerDataContainer  .ant-collapse-ghost > .ant-collapse-item > .ant-collapse-content > .ant-collapse-content-box {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
