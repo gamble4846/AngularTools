@@ -9,6 +9,10 @@ export class FooterComponent implements OnInit {
 
   links:any = [
     {
+      "text": "Home",
+      "routerLink": "/",
+    },
+    {
       "text": "Random Password Generator",
       "routerLink": "/RandomPasswordGenerator",
     },
