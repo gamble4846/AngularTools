@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DTMOpenerComponent } from './dtmopener.component';
+import { DTCOpenerComponent } from './dtcopener.component';
 
-describe('DTMOpenerComponent', () => {
-  let component: DTMOpenerComponent;
-  let fixture: ComponentFixture<DTMOpenerComponent>;
+describe('DTCOpenerComponent', () => {
+  let component: DTCOpenerComponent;
+  let fixture: ComponentFixture<DTCOpenerComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DTMOpenerComponent ]
+      declarations: [ DTCOpenerComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DTMOpenerComponent);
+    fixture = TestBed.createComponent(DTCOpenerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

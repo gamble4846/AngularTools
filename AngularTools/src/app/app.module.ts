@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NzMessageModule } from 'ng-zorro-antd/message';
 import { CoreModule } from './Core/core.module';
+import { ConfigService } from './Core/Services/ConfigService/config.service';
 
 registerLocaleData(en);
 
@@ -29,7 +30,10 @@ registerLocaleData(en);
     NzMessageModule,
     CoreModule
   ],
-  providers: [{ provide: NZ_I18N, useValue: en_US }],
+  providers: [
+    { provide: NZ_I18N, useValue: en_US },
+    { provide: APP_INITIALIZER, multi: true, deps: [ConfigService], useFactory: (ConfigService: ConfigService) => { return () => { return ConfigService.loadEverything(); }; }, },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

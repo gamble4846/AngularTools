@@ -18,7 +18,7 @@ export class FooterComponent implements OnInit {
     },
     {
       "text": "Database To Models",
-      "routerLink": "/DatabaseToModels",
+      "routerLink": "/DatabaseToCode",
     },
   ]
 

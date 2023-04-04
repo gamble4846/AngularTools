@@ -15,4 +15,18 @@ export class CommonService {
   copyString(str:string){
     navigator.clipboard.writeText(str);
   }
+
+  getDTCToken(){
+    return localStorage.getItem("DTCToken");
+  }
+
+  CheckIfTokenExists(tokenName:string){
+    let data = localStorage.getItem(tokenName);
+    if(data){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
 }

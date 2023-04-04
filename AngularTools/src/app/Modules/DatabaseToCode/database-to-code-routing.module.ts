@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DTMOpenerComponent } from './DTMOpener/dtmopener.component';
+import { DTCOpenerComponent } from './Components/DTCOpener/dtcopener.component';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full',  component:DTMOpenerComponent },
+  { path: '', pathMatch: 'full',  component:DTCOpenerComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class DatabaseToModelsRoutingModule { }
+export class DatabaseToCodeRoutingModule { }
