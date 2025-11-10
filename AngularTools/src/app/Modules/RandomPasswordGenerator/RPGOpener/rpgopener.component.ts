@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonService } from 'src/app/Core/Services/CommonService/common.service';
+import { CommonService } from '../../../Core/Services/CommonService/common.service';
 
 @Component({
   selector: 'app-rpgopener',
