@@ -19,7 +19,7 @@
     "@angular/platform-browser-dynamic": "^14.3.0",
     "@angular/router": "^14.3.0",
     "html2canvas": "^1.4.1",
-    "ng-zorro-antd": "^13.4.0",
+    "ng-zorro-antd": "^14.0.0",
     "pdf-lib": "^1.17.1",
     "psd": "^3.4.0",
     "rxjs": "~7.5.0",
