@@ -1,0 +1,90 @@
+<div class="PDFPasswordComponentContainer">
+    <div class="container">
+        <header class="header">
+            <h1 style="color: white;">PDF Password Remover</h1>
+            <p class="subtitle">Remove password protection from your PDF files</p>
+        </header>
+
+        <main class="main-content">
+            <div class="card">
+                <!-- File Selection -->
+                <div class="file-section">
+                    <label for="pdfFileInput" class="file-label">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                            <polyline points="10 9 9 9 8 9"></polyline>
+                        </svg>
+                        <span>Select PDF File</span>
+                    </label>
+                    <input type="file" id="pdfFileInput" accept=".pdf" (change)="onFileSelected($event)"
+                        class="file-input" />
+                    <div class="file-info" *ngIf="fileName">
+                        <span class="file-name">{{ fileName }}</span>
+                        <span class="status-checking" *ngIf="isProcessing">Checking...</span>
+                        <span class="status-protected" *ngIf="!isProcessing && isPasswordProtected">🔒 Password
+                            Protected</span>
+                        <span class="status-unprotected" *ngIf="!isProcessing && !isPasswordProtected">🔓 Not
+                            Protected</span>
+                    </div>
+                </div>
+
+                <!-- Password Input Section -->
+                <div class="password-section" *ngIf="selectedFile && !isProcessing">
+                    <label for="passwordInput" class="password-label">
+                        <span *ngIf="isPasswordProtected">Enter PDF Password</span>
+                        <span *ngIf="!isPasswordProtected">Enter Password (if protected)</span>
+                    </label>
+                    <input type="password" id="passwordInput" [(ngModel)]="password"
+                        placeholder="Enter password if PDF is protected" class="password-input"
+                        (keyup.enter)="removePassword()" />
+                    <button (click)="removePassword()" [disabled]="isProcessing || !password" class="btn btn-primary">
+                        <span *ngIf="isProcessing">Processing...</span>
+                        <span *ngIf="!isProcessing">Remove Password</span>
+                    </button>
+                    <p class="password-hint" *ngIf="!isPasswordProtected">Note: If your PDF is password-protected but
+                        wasn't detected, you can still
+                        enter the password above.</p>
+                </div>
+
+                <!-- Messages -->
+                <div class="message message-error" *ngIf="errorMessage">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                    <span>{{ errorMessage }}</span>
+                </div>
+
+                <div class="message message-success" *ngIf="successMessage">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                    <span>{{ successMessage }}</span>
+                </div>
+
+                <!-- Reset Button -->
+                <button (click)="reset()" class="btn btn-secondary" *ngIf="selectedFile">
+                    Select Different File
+                </button>
+            </div>
+
+            <!-- Instructions -->
+            <div class="instructions">
+                <h3>How to use:</h3>
+                <ol>
+                    <li>Select a PDF file using the button above</li>
+                    <li>If the PDF is password protected, enter the password</li>
+                    <li>Click "Remove Password" to unlock and download the PDF</li>
+                </ol>
+            </div>
+        </main>
+    </div>
+</div>

@@ -17,8 +17,8 @@ export class FooterComponent implements OnInit {
       "routerLink": "/RandomPasswordGenerator",
     },
     {
-      "text": "Database To Models",
-      "routerLink": "/DatabaseToCode",
+      "text": "PDF Password Remover",
+      "routerLink": "/PDFPasswordRemover",
     },
   ]
 
