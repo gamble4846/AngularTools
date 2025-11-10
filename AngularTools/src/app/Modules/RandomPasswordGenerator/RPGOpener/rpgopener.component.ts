@@ -4,7 +4,8 @@ import { CommonService } from 'src/app/Core/Services/CommonService/common.servic
 @Component({
   selector: 'app-rpgopener',
   templateUrl: './rpgopener.component.html',
-  styleUrls: ['./rpgopener.component.css']
+  styleUrls: ['./rpgopener.component.css'],
+  standalone: false
 })
 export class RPGOpenerComponent implements OnInit {
 

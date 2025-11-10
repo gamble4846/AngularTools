@@ -4,7 +4,8 @@ import { PDFPassword } from '../../../Core/Services/PDFService/pdfpassword';
 @Component({
   selector: 'app-opener',
   templateUrl: './opener.component.html',
-  styleUrls: ['./opener.component.css']
+  styleUrls: ['./opener.component.css'],
+  standalone: false
 })
 export class OpenerComponent implements OnInit {
   
