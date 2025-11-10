@@ -9,9 +9,7 @@ import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { FormsModule } from '@angular/forms';
 import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { NzMessageModule } from 'ng-zorro-antd/message';
 import { CoreModule } from './Core/core.module';
 import { ConfigService } from './Core/Services/ConfigService/config.service';
 
@@ -23,8 +21,6 @@ registerLocaleData(en);
     bootstrap: [AppComponent], imports: [BrowserModule,
         AppRoutingModule,
         FormsModule,
-        BrowserAnimationsModule,
-        NzMessageModule,
         CoreModule], providers: [
         { provide: NZ_I18N, useValue: en_US },
         { provide: APP_INITIALIZER, multi: true, deps: [ConfigService], useFactory: (ConfigService: ConfigService) => { return () => { return ConfigService.loadEverything(); }; }, },
